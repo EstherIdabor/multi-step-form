@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="step-outline">
+          <div>
+            <p class="digits">1</p>
+          </div>
+          <div>
+            <p class="steps">Step 1</p>
+            <h3>Your info</h3>
+          </div>
+        </div>
+        <div class="step-outline">
+          <div>
+            <p class="digits">2</p>
+          </div>
+          <div>
+            <p class="steps">Step 2</p>
+            <h3>Select plan</h3>
+          </div>
+        </div>
+        <div class="step-outline">
+          <div>
+            <p class="digits">3</p>
+          </div>
+          <div>
+            <p class="steps">Step 3</p>
+            <h3>Add-ons</h3>
+          </div>
+        </div>
+        <div class="step-outline">
+          <div><p class="digits">4</p></div>
+          <div>
+            <p class="steps">Step 4</p>
+            <h3>Summary</h3>
+          </div>
+        </div>
+      </div>
+      <!-- STEPS -->
+      <section class="multi-step-form">
+        <!-- FORM -->
+        <div class="hidden" id="first-step">
+          <div class="header">
+            <h1 class="primary-header">Personal info</h1>
+            <p class="sub-text">
+              Please provide your name, email address, and phone number.
+            </p>
+          </div>
+          <form action="" class="form">
+            <div class="form-control">
+              <label for="fname" class="label-text">Name</label>
+              <input type="text" id="fname" placeholder="e.g. Stephen King" />
+            </div>
+            <div class="form-control">
+              <label for="email" class="label-text">Email Address</label>
+              <input
+                type="text"
+                id="email"
+                placeholder="e.g. stephenking@lorem.com"
+              />
+            </div>
+            <div class="form-control">
+              <label for="Pnumber" class="label-text">Phone Number</label>
+              <input
+                type="number"
+                id="Pnumber"
+                placeholder="e.g. +1 234 567 890"
+              />
+            </div>
+          </form>
+          <div class="first-button-div">
+            <button>Next Step</button>
+          </div>
+        </div>
+        <!-- SECOND STEP -->
+        <div div class="hidden" id="second-step">
+          <div>
+            <h1 class="primary-header">Select your plan</h1>
+            <p class="sub-text">
+              You have the option of monthly or yearly billing.
+            </p>
+          </div>
+          <div class="available-plans">
+            <div class="plan" tabindex="1">
+              <div>
+                <img src="/assets/images/icon-arcade.svg" alt="" />
+              </div>
+              <div>
+                <h3>Arcade</h3>
+                <p>$9/mo</p>
+              </div>
+            </div>
+            <div class="plan" tabindex="2">
+              <div>
+                <img src="/assets/images/icon-advanced.svg" alt="" />
+              </div>
+              <div>
+                <h3>Advanced</h3>
+                <p>$12/mo</p>
+              </div>
+            </div>
+            <div class="plan" tabindex="3">
+              <div>
+                <img src="/assets/images/icon-pro.svg" alt="" />
+              </div>
+              <div>
+                <h3>Pro</h3>
+                <p>$15/mo</p>
+              </div>
+            </div>
+          </div>
+          <div class="monthly-yearly">
+            <p>Monthly</p>
+            <div class="toggle-year"><div class="inner-circle"></div></div>
+            <p>Yearly</p>
+          </div>
+          <div class="next-link">
+            <a href="#">Go Back</a>
+            <button>Next Step</button>
+          </div>
+        </div>
+        <!-- THIRD STEP -->
+        <div class="hidden" id="third-step">
+          <div>
+            <h1 class="primary-header">Pick add-ons</h1>
+            <p class="sub-text">Add-ons help enhance your gaming experience.</p>
+          </div>
+          <div>
+            <div class="adds-on">
+              <input type="checkbox" />
+              <div>
+                <h3 class="label-text">Online service</h3>
+                <p class="sub-text">Access to multiplayer games</p>
+              </div>
+              <p class="purplishblue-text-color">+$1/mo</p>
+            </div>
+            <div class="adds-on">
+              <input type="checkbox" class="regular-checkbox" />
+              <div>
+                <h3 class="label-text">Larger storage</h3>
+                <p class="sub-text">Extra 1TB of cloud save</p>
+              </div>
+              <p class="purplishblue-text-color">+$2/mo</p>
+            </div>
+            <div class="adds-on">
+              <input type="checkbox" />
+              <div>
+                <h3 class="label-text">Customizable Profile</h3>
+                <p class="sub-text">Custom theme on your profile</p>
+              </div>
+              <p class="purplishblue-text-color">+$2/mo</p>
+            </div>
+            <div class="next-link">
+              <a href="#">Go Back</a>
+              <button>Next Step</button>
+            </div>
+          </div>
+        </div>
+        <!-- FOURTH STEP -->
+        <div class="hidden" id="fourth-step">
+          <div>
+            <h1 class="primary-header">Finishing up</h1>
+            <p class="sub-text">
+              Double-check everything looks OK before confirming.
+            </p>
+          </div>
+          <div class="dynamic container">
+            <div></div>
+          </div>
+          <div class="next-link">
+            <a href="#">Go Back</a>
+            <button class="confirm">Confirm</button>
+          </div>
+        </div>
+        <!-- FINAL SECTION -->
+        <div class="thank-you-section">
+          <div class="thank-you-image">
+            <img src="/assets/images/icon-thank-you.svg" alt="" />
+          </div>
+          <div class="thank-you-message">
+            <h1 class="primary-header">Thank you!</h1>
+            <p class="sub-text">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

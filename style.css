@@ -1,0 +1,228 @@
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+
+  --f-size: 14px;
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font: inherit;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+img,
+svg {
+  max-width: 100;
+  display: block;
+}
+
+/* GENERAL STYLING */
+body {
+  background-color: var(--Magnolia);
+  font-family: "Ubuntu", sans-serif;
+  font-size: var(--f-size);
+  color: var(--marine-blue);
+}
+main {
+  background-color: var(--White);
+  width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* column-gap: 2rem; */
+  margin: 2rem auto;
+  border-radius: 8px;
+}
+/* SIDEBAR STYLING */
+.sidebar {
+  background-image: url("/assets/images/bg-sidebar-desktop.svg");
+  background-size: cover;
+  color: var(--White);
+  border-radius: 8px;
+  padding: 2rem;
+  font-size: 14px;
+  margin: 1rem;
+}
+
+.digits {
+  border: 1px solid var(--Light-gray);
+  padding: 0.4rem;
+  border-radius: 70%;
+}
+
+.step-outline {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.steps {
+  color: var(--Cool-gray);
+}
+
+/* STYLES FOR THE STEPS */
+.multi-step-form {
+  padding: 2rem;
+  padding-right: 6rem;
+  position: relative;
+}
+
+/* FIRST STEP(THE FORM) */
+.header {
+  margin-bottom: 1.5rem;
+}
+.form-control {
+  margin-bottom: 2rem;
+}
+.form-control label {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+}
+.form-control input {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+.form-control input:focus {
+  outline: none;
+}
+.form-control input::placeholder {
+  color: var(--Cool-gray);
+}
+.first-button-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+}
+.multi-step-form button {
+  background-color: var(--marine-blue);
+  color: var(--White);
+  border: 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  align-content: flex-end;
+  cursor: pointer;
+}
+
+/* SECOND STEP */
+.available-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+  padding-top: 2.3rem;
+  padding-bottom: 1.8rem;
+}
+.plan {
+  display: grid;
+  row-gap: 2rem;
+  border: 1px solid var(--Light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.plan:focus {
+  border: 1px solid var(--Purplish-blue);
+}
+.monthly-yearly {
+  background-color: var(--Alabaster);
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+  padding: 0.7rem;
+}
+.toggle-year {
+  background-color: var(--marine-blue);
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 16px;
+  position: relative;
+}
+.inner-circle {
+  background-color: white;
+  width: 1.1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.next-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+.next-link a {
+  color: var(--Cool-gray);
+}
+
+/* THIRD STEP */
+.adds-on {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  border: 1.5px solid var(--Light-gray);
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* FINAL STEP */
+.thank-you-section {
+  padding: 2rem;
+  margin: 5rem auto;
+}
+.thank-you-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.thank-you-message {
+  text-align: center;
+}
+
+/* UTILITY CLASS */
+.primary-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.label-text {
+  font-weight: 600;
+}
+.sub-text {
+  color: var(--Cool-gray);
+  font-weight: 400;
+}
+.purplishblue-text-color {
+  color: var(--Purplish-blue);
+}
+.hidden {
+  display: none;
+}
+.multi-step-form button.confirm {
+  background-color: var(--Purplish-blue);
+}
