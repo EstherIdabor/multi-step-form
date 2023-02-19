@@ -31,14 +31,15 @@ Users are able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL](https://github.com/EstherIdabor/multi-step-form)
+- Live Site URL: [live site URL](https://your-live-site-url.com)
 
 ## My process
 
 This project is divided into threee sections; the markup or HTML, the styling(CSS), and the functionality(JavaScript).
 The markup is quite straight-forward and from the design it is easy to visualze how to contanerized using section and/or div tag, the different related content and steps.
-firstly everything is put in a main tag, the sidebar doesn't change even as the steps change, so it is put alone in a div container seperated from the different steps, the steps are wrapped in a container also, so that some general styling can be applied without repetition such as padding and margin, this is because the the layout for the different steps is similar to an extent. The different steps are put in different div for application of their separate style.
+
+Firstly everything is put in a main tag, the sidebar doesn't change even as the steps change, so it is put alone in a div container seperated from the different steps, the steps are wrapped in a container also, so that some general styling can be applied without repetition such as padding and margin, this is because the the layout for the different steps is similar to an extent. The different steps are put in different div for application of their separate style.
 
 ### Built with
 
@@ -62,12 +63,8 @@ const proudOfThisFunc = () => {
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**

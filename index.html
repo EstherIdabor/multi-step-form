@@ -19,177 +19,221 @@
       <div class="sidebar">
         <div class="step-outline">
           <div>
-            <p class="digits">1</p>
+            <p class="digits" data-step="1">1</p>
           </div>
-          <div>
-            <p class="steps">Step 1</p>
-            <h3>Your info</h3>
+          <div class="step-text">
+            <p class="steps" >Step 1</p>
+            <p >Your info</p>
           </div>
         </div>
         <div class="step-outline">
           <div>
-            <p class="digits">2</p>
+            <p class="digits" data-step="2">2</p>
           </div>
-          <div>
+          <div class="step-text">
             <p class="steps">Step 2</p>
-            <h3>Select plan</h3>
+            <p>Select plan</p>
           </div>
         </div>
         <div class="step-outline">
           <div>
-            <p class="digits">3</p>
+            <p class="digits" data-step="3">3</p>
           </div>
-          <div>
+          <div class="step-text">
             <p class="steps">Step 3</p>
-            <h3>Add-ons</h3>
+            <p>Add-ons</p>
           </div>
         </div>
         <div class="step-outline">
-          <div><p class="digits">4</p></div>
-          <div>
+          <div><p class="digits" data-step="4">4</p></div>
+          <div class="step-text">
             <p class="steps">Step 4</p>
-            <h3>Summary</h3>
+            <p>Summary</p>
           </div>
         </div>
       </div>
       <!-- STEPS -->
       <section class="multi-step-form">
         <!-- FORM -->
-        <div class="hidden" id="first-step">
-          <div class="header">
-            <h1 class="primary-header">Personal info</h1>
-            <p class="sub-text">
-              Please provide your name, email address, and phone number.
-            </p>
+        <div  id="first-step">
+          <div class="box-card">
+            <div class="header">
+              <h1 class="primary-header">Personal info</h1>
+              <p class="sub-text">
+                Please provide your name, email address, and phone number.
+              </p>
+            </div>
+            <form action="" class="form">
+              <div class="form-control">
+                <label for="fname" class="text-weight-700">Name</label>
+                <input type="text" id="fname" placeholder="e.g. Stephen King" />
+                <small>Error Message</small>
+              </div>
+              <div class="form-control">
+                <label for="email" class="text-weight-700">Email Address</label>
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="e.g. stephenking@lorem.com"
+                />
+                <small>Error Message</small>
+              </div>
+              <div class="form-control">
+                <label for="Pnumber" class="text-weight-700">Phone Number</label>
+                <input
+                  type="number"
+                  id="Pnumber"
+                  placeholder="e.g. +1 234 567 890"
+                />
+                <small>Error Message</small>
+              </div>
           </div>
-          <form action="" class="form">
-            <div class="form-control">
-              <label for="fname" class="label-text">Name</label>
-              <input type="text" id="fname" placeholder="e.g. Stephen King" />
-            </div>
-            <div class="form-control">
-              <label for="email" class="label-text">Email Address</label>
-              <input
-                type="text"
-                id="email"
-                placeholder="e.g. stephenking@lorem.com"
-              />
-            </div>
-            <div class="form-control">
-              <label for="Pnumber" class="label-text">Phone Number</label>
-              <input
-                type="number"
-                id="Pnumber"
-                placeholder="e.g. +1 234 567 890"
-              />
-            </div>
-          </form>
           <div class="first-button-div">
-            <button>Next Step</button>
+            <button type="submit">Next Step</button>
           </div>
+          </form>
         </div>
         <!-- SECOND STEP -->
-        <div div class="hidden" id="second-step">
-          <div>
-            <h1 class="primary-header">Select your plan</h1>
-            <p class="sub-text">
-              You have the option of monthly or yearly billing.
-            </p>
-          </div>
-          <div class="available-plans">
-            <div class="plan" tabindex="1">
-              <div>
-                <img src="/assets/images/icon-arcade.svg" alt="" />
+        <div class="hidden" id="second-step">
+          <div class="box-card">
+            <div>
+              <h1 class="primary-header">Select your plan</h1>
+              <p class="sub-text">
+                You have the option of monthly or yearly billing.
+              </p>
+            </div>
+            <div class="available-plans">
+              <div class="plan" tabindex="1">
+                <div>
+                  <img src="/assets/images/icon-arcade.svg" alt="" />
+                </div>
+                <div class="choice">
+                  <h3 class="margin-top text-weight-700">Arcade</h3>
+                  <p class="margin-top month">$9/mo</p>
+                </div>
               </div>
-              <div>
-                <h3>Arcade</h3>
-                <p>$9/mo</p>
+              <div class="plan" tabindex="1">
+                <div>
+                  <img src="/assets/images/icon-advanced.svg" alt="" />
+                </div>
+                <div class="choice">
+                  <h3 class="margin-top text-weight-700">Advanced</h3>
+                  <p class="margin-top month">$12/mo</p>
+                  
+                </div>
+              </div>
+              <div class="plan" tabindex="1">
+                <div>
+                  <img src="/assets/images/icon-pro.svg" alt="" />
+                </div>
+                <div class="choice">
+                  <h3 class="margin-top text-weight-700">Pro</h3>
+                  <p class="margin-top month">$15/mo</p>
+                </div>
               </div>
             </div>
-            <div class="plan" tabindex="2">
-              <div>
-                <img src="/assets/images/icon-advanced.svg" alt="" />
-              </div>
-              <div>
-                <h3>Advanced</h3>
-                <p>$12/mo</p>
-              </div>
+            <div class="monthly-yearly">
+              <p>Monthly</p>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+              <p class="blur-text">Yearly</p>
             </div>
-            <div class="plan" tabindex="3">
-              <div>
-                <img src="/assets/images/icon-pro.svg" alt="" />
-              </div>
-              <div>
-                <h3>Pro</h3>
-                <p>$15/mo</p>
-              </div>
-            </div>
-          </div>
-          <div class="monthly-yearly">
-            <p>Monthly</p>
-            <div class="toggle-year"><div class="inner-circle"></div></div>
-            <p>Yearly</p>
           </div>
           <div class="next-link">
-            <a href="#">Go Back</a>
-            <button>Next Step</button>
+            <a class="back-2" href="#" >Go Back</a>
+            <button class="button-2">Next Step</button>
           </div>
         </div>
         <!-- THIRD STEP -->
-        <div class="hidden" id="third-step">
+        <div  class="hidden" id="third-step">
+          <div class="box-card">
           <div>
             <h1 class="primary-header">Pick add-ons</h1>
             <p class="sub-text">Add-ons help enhance your gaming experience.</p>
           </div>
-          <div>
-            <div class="adds-on">
-              <input type="checkbox" />
+          <div class="choose-adds-on">
+            <a href="">
+            <div class="adds-on" >
+              <input type="checkbox" class="regular-checkbox" checked/>
               <div>
-                <h3 class="label-text">Online service</h3>
+                <h3 class="text-weight-700">Online service</h3>
                 <p class="sub-text">Access to multiplayer games</p>
               </div>
-              <p class="purplishblue-text-color">+$1/mo</p>
+              <p class="purplishblue-text-color adds-on-month">+$1/mo</p>
+              <p class="purplishblue-text-color adds-on-year hidden">+$10/yr</p>
             </div>
+          </a>
+            <a href="">
             <div class="adds-on">
-              <input type="checkbox" class="regular-checkbox" />
+              <input type="checkbox" class="regular-checkbox" checked/>
               <div>
-                <h3 class="label-text">Larger storage</h3>
+                <h3 class="text-weight-700">Larger storage</h3>
                 <p class="sub-text">Extra 1TB of cloud save</p>
               </div>
-              <p class="purplishblue-text-color">+$2/mo</p>
+              <p class="purplishblue-text-color adds-on-month">+$2/mo</p>
+              <p class="purplishblue-text-color adds-on-year hidden">+$20/yr</p>
             </div>
+          </a>
+            <a href="#">
             <div class="adds-on">
-              <input type="checkbox" />
+              <input class="regular-checkbox" type="checkbox" />
               <div>
-                <h3 class="label-text">Customizable Profile</h3>
+                <h3 class="text-weight-700">Customizable Profile</h3>
                 <p class="sub-text">Custom theme on your profile</p>
               </div>
-              <p class="purplishblue-text-color">+$2/mo</p>
+              <p class="purplishblue-text-color adds-on-month">+$2/mo</p>
+              <p class="purplishblue-text-color adds-on-year hidden">+$20/yr</p>
             </div>
-            <div class="next-link">
-              <a href="#">Go Back</a>
-              <button>Next Step</button>
-            </div>
+          </a>
+          </div>
+          </div>
+          <div class="next-link">
+            <a class="back-3" href="#">Go Back</a>
+            <button class="button-3">Next Step</button>
           </div>
         </div>
         <!-- FOURTH STEP -->
         <div class="hidden" id="fourth-step">
+          <div class="box-card">
           <div>
             <h1 class="primary-header">Finishing up</h1>
             <p class="sub-text">
               Double-check everything looks OK before confirming.
             </p>
           </div>
-          <div class="dynamic container">
-            <div></div>
+          <div class="dynamic-container">
+            <div class="dynamic-div__1">
+              <!-- <div class="flex">
+                <h3 class="margin-top text-weight-700">Arcade</h3>
+                <p class="margin-top month">$9/mo</p>
+            </div> -->
+            <a class="blur-text change__link" href="#">change</a>
           </div>
+          <div class="dynamic-div__2">
+            <!-- <div class="flex">
+              <h3 class="blur-text">Online service</h3>
+              <p >+$20/yr</p>
+            </div>
+            <div class="flex">
+              <h3 class="blur-text">Larger storage</h3>
+              <p>+$20/yr</p>
+            </div> -->
+          </div>
+          </div>
+          <div class="flex dynamic-div__total">
+            <!-- <p class="blur-text">Total(per year)</p>
+            <strong>$120/yr</strong> -->
+          </div>
+        </div>
           <div class="next-link">
-            <a href="#">Go Back</a>
-            <button class="confirm">Confirm</button>
+            <a class="back-4" href="#">Go Back</a>
+            <button class="confirm button-4">Confirm</button>
           </div>
         </div>
         <!-- FINAL SECTION -->
-        <div class="thank-you-section">
+        <div class="thank-you-section hidden box-card" id="final-step">
           <div class="thank-you-image">
             <img src="/assets/images/icon-thank-you.svg" alt="" />
           </div>

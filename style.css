@@ -53,6 +53,11 @@ main {
   margin: 2rem auto;
   border-radius: 8px;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 /* SIDEBAR STYLING */
 .sidebar {
   background-image: url("/assets/images/bg-sidebar-desktop.svg");
@@ -64,12 +69,6 @@ main {
   margin: 1rem;
 }
 
-.digits {
-  border: 1px solid var(--Light-gray);
-  padding: 0.4rem;
-  border-radius: 70%;
-}
-
 .step-outline {
   display: flex;
   gap: 1.5rem;
@@ -77,6 +76,17 @@ main {
   text-transform: uppercase;
   font-weight: 400;
 }
+.digits {
+  border: 1px solid var(--Light-gray);
+  padding: 0.4rem;
+  border-radius: 50%;
+}
+.digits.active_digit {
+  background-color: var(--Magnolia);
+  color: var(--marine-blue);
+  border-color: transparent;
+}
+
 .steps {
   color: var(--Cool-gray);
 }
@@ -93,7 +103,9 @@ main {
   margin-bottom: 1.5rem;
 }
 .form-control {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
 }
 .form-control label {
   display: inline-block;
@@ -107,10 +119,25 @@ main {
   padding: 0.6rem;
 }
 .form-control input:focus {
-  outline: none;
+  outline: transparent;
+  border-color: var(--Purplish-blue);
+}
+.form-control.error input {
+  border-color: var(--Strawberry-red);
 }
 .form-control input::placeholder {
   color: var(--Cool-gray);
+}
+.form-control small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--Strawberry-red);
+  visibility: hidden;
+}
+.form-control.error small {
+  visibility: visible;
+  font-weight: 500;
 }
 .first-button-div {
   display: flex;
@@ -137,11 +164,18 @@ main {
 }
 .plan {
   display: grid;
-  row-gap: 2rem;
+  row-gap: 0.5rem;
   border: 1px solid var(--Light-gray);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
+  height: 25vh;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.choice p {
+  color: var(--Cool-gray);
 }
 .plan:focus {
   border: 1px solid var(--Purplish-blue);
@@ -153,22 +187,47 @@ main {
   border-radius: 5px;
   padding: 0.7rem;
 }
-.toggle-year {
-  background-color: var(--marine-blue);
-  width: 3rem;
-  height: 1.5rem;
-  border-radius: 16px;
+.switch {
   position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 23px;
 }
-.inner-circle {
-  background-color: white;
-  width: 1.1rem;
-  height: 1rem;
-  border-radius: 50%;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
   position: absolute;
-  top: 3px;
-  left: 3px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: var(--marine-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider.year::before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
 .next-link {
   display: flex;
   justify-content: space-between;
@@ -177,6 +236,9 @@ main {
 }
 .next-link a {
   color: var(--Cool-gray);
+}
+.next-link a:focus {
+  color: var(--marine-blue);
 }
 
 /* THIRD STEP */
@@ -188,6 +250,45 @@ main {
   margin-top: 1.5rem;
   border-radius: 8px;
   padding: 1rem;
+}
+.adds-on:has(input:checked) {
+  border-color: var(--Purplish-blue);
+}
+a:focus .adds-on {
+  border-color: var(--Purplish-blue);
+}
+
+/* FOURTH/DYNAMIC STEP */
+.dynamic-container {
+  padding: 1rem 1rem 0rem;
+  background-color: var(--Alabaster);
+  border-radius: 8px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+.dynamic-div__1 {
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--Light-gray);
+}
+.dynamic-div__2 {
+  padding: 0.7rem;
+}
+.dynamic-div__2 div {
+  margin-bottom: 0.8rem;
+}
+.dynamic-div__total {
+  margin-bottom: 5.5rem;
+}
+.dynamic-div__total strong {
+  color: var(--Purplish-blue);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.change__link {
+  text-decoration: underline;
+}
+.change__link:focus {
+  color: var(--Purplish-blue);
 }
 
 /* FINAL STEP */
@@ -210,19 +311,113 @@ main {
   font-weight: 700;
   margin-bottom: 0.8rem;
 }
-.label-text {
-  font-weight: 600;
+.text-weight-700 {
+  font-weight: 700;
 }
 .sub-text {
   color: var(--Cool-gray);
   font-weight: 400;
+  line-height: 1.7;
 }
 .purplishblue-text-color {
   color: var(--Purplish-blue);
 }
+.blur-text {
+  color: var(--Cool-gray);
+}
+.margin-top {
+  margin-top: 0.6rem;
+}
 .hidden {
   display: none;
+}
+.visible {
+  display: block;
 }
 .multi-step-form button.confirm {
   background-color: var(--Purplish-blue);
 }
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+  main {
+    width: 90%;
+  }
+  .available-plans {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .multi-step-form {
+    padding-right: 2rem;
+    position: relative;
+  }
+}
+@media (max-width: 700px) {
+  main {
+    width: 100%;
+    grid-template-columns: 1fr;
+    background-color: var(--Magnolia);
+    margin: 0 auto;
+    border-radius: 0;
+  }
+  .sidebar {
+    background-image: url("/assets/images/bg-sidebar-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4rem;
+    margin: 0;
+    border-radius: 0px;
+  }
+  .step-text {
+    display: none;
+  }
+  .box-card {
+    background-color: var(--White);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    margin: -4.3rem auto 0;
+  }
+  .multi-step-form {
+    padding-right: 2rem;
+    position: relative;
+  }
+}
+@media (max-width: 500px) {
+  .multi-step-form {
+    padding: 0;
+  }
+  .box-card {
+    background-color: var(--White);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 91%;
+    margin: -4.3rem auto 0;
+  }
+  .first-button-div {
+    background-color: var(--White);
+    padding: 1rem;
+  }
+
+  /* SECOND STEP */
+  .available-plans {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .plan {
+    grid-template-columns: 1fr 4fr;
+    padding: 1rem;
+    height: 12vh;
+  }
+  .next-link {
+    background-color: var(--White);
+    padding: 1rem;
+  }
+} ;
