@@ -290,7 +290,7 @@ const removeDynamicContainer = function () {
 
 thirdBackCall.addEventListener("click", function () {
   removeDynamicContainer();
-  displayPage(stepFour.stepThree);
+  displayPage(stepFour, stepThree);
 
   fourthDigit.classList.remove("active_digit");
   if (!stepThree.classList.contains("hidden"))
