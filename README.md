@@ -32,14 +32,15 @@ Users are able to:
 ### Links
 
 - Solution URL: [solution URL](https://github.com/EstherIdabor/multi-step-form)
-- Live Site URL: [live site URL](https://your-live-site-url.com)
+- Live Site URL: [live site URL](https://multi-step-form-esther.netlify.app/)
 
 ## My process
 
 This project is divided into threee sections; the markup or HTML, the styling(CSS), and the functionality(JavaScript).
 The markup is quite straight-forward and from the design it is easy to visualze how to contanerized using section and/or div tag, the different related content and steps.
 
-Firstly everything is put in a main tag, the sidebar doesn't change even as the steps change, so it is put alone in a div container seperated from the different steps, the steps are wrapped in a container also, so that some general styling can be applied without repetition such as padding and margin, this is because the the layout for the different steps is similar to an extent. The different steps are put in different div for application of their separate style.
+Firstly everything is put in a main tag, the sidebar doesn't change even as the steps change, so it is put alone in a div container seperated from the different steps, the steps are wrapped in a container also, so that some general styling can be applied without repetition such as padding and margin, this is because the the layout for the different steps is similar to an extent.
+The different steps are put in different div for application of their separate style.
 
 ### Built with
 
@@ -47,24 +48,29 @@ Firstly everything is put in a main tag, the sidebar doesn't change even as the 
 - CSS
 - Flexbox
 - CSS Grid
+- vanilla JS
 
 ### What I learned
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+dynamicContainer1.insertAdjacentHTML(
+  "afterbegin",
+  `<div class="flex">
+  <h3 class="margin-top text-weight-700">${activeTabName}(${interval})</h3>
+  <p class="margin-top month">${activeTabValue}</p>
+ </div>`
+);
 ```
 
 ### Continued development
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [resource 1](https://developer.mozilla.org/en-US/)
+- [resource 2](https://www.w3schools.com/)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Blog - [Esther Idabor's blog](https://devmedic.hashnode.dev/)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Twitter - [@Chukwuyem_ego](https://twitter.com/Chukwuyem_ego?t=LuQxqfKBn0VlD7mNTOztOQ&s=08)

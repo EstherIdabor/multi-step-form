@@ -35,6 +35,11 @@ const fourthDigit = document.querySelector(".digits[data-step = '4']");
 
 firstDigit.classList.add("active_digit");
 
+const displayPage = function (step1, step2) {
+  step1.classList.add("hidden");
+  step2.classList.remove("hidden");
+};
+
 // FORM VALIDATION/ STEP ONE
 // Convert form-control to an array from a nodelist
 formControls = Array.from(formControls);
@@ -48,13 +53,14 @@ form.addEventListener("submit", (e) => {
     formControl.classList.contains("error")
   );
   if (!errorCheck) {
-    stepOne.classList.add("hidden");
-    stepTwo.classList.remove("hidden");
-  }
+    // if errors does not exit i.e the user has entered their details we hide the current step and move to the next step
+    displayPage(stepOne, stepTwo);
 
-  firstDigit.classList.remove("active_digit");
-  if (!stepTwo.classList.contains("hidden"))
-    secondDigit.classList.add("active_digit");
+    // and remove the active-digit class from the digit corresponding to the current page and add to the digit corresponding to the page the button is taking the user to
+    firstDigit.classList.remove("active_digit");
+    if (!stepTwo.classList.contains("hidden"))
+      secondDigit.classList.add("active_digit");
+  }
 });
 
 function validateEmail(email) {
@@ -101,9 +107,9 @@ function hideErrorMessage(input) {
   formControlDiv.classList = "form-control";
 }
 
+////////////////////////////////////////////////////////
 let month = true;
 
-/////////////////////////////
 let activeTab = document.querySelector(".plan[tabindex='1']");
 availablePlan.addEventListener("click", function (e) {
   if (e.target.closest(".plan")) {
@@ -111,7 +117,6 @@ availablePlan.addEventListener("click", function (e) {
   }
 });
 
-//////////////////
 // STEP TWO
 slider.addEventListener("click", function (e) {
   e.preventDefault();
@@ -181,8 +186,7 @@ secondButton.addEventListener("click", function (e) {
     });
   }
 
-  stepTwo.classList.add("hidden");
-  stepThree.classList.remove("hidden");
+  displayPage(stepTwo, stepThree);
 
   secondDigit.classList.remove("active_digit");
   if (!stepThree.classList.contains("hidden"))
@@ -190,15 +194,14 @@ secondButton.addEventListener("click", function (e) {
 });
 
 firstBackCall.addEventListener("click", function () {
-  stepOne.classList.remove("hidden");
-  stepTwo.classList.add("hidden");
+  displayPage(stepTwo, stepOne);
 
   secondDigit.classList.remove("active_digit");
   if (!stepOne.classList.contains("hidden"))
     firstDigit.classList.add("active_digit");
 });
 
-/////////////////////
+////////////////////////////////////////////////////////////////////
 const dynamicContainer1 = document.querySelector(".dynamic-div__1");
 const dynamicContainer2 = document.querySelector(".dynamic-div__2");
 const totalValue = document.querySelector(".dynamic-div__total");
@@ -256,8 +259,7 @@ thirdButton.addEventListener("click", function (e) {
   <strong>$${total}/${unit}</strong>`
   );
 
-  stepFour.classList.remove("hidden");
-  stepThree.classList.add("hidden");
+  displayPage(stepThree, stepFour);
 
   thirdDigit.classList.remove("active_digit");
   if (!stepFour.classList.contains("hidden"))
@@ -265,8 +267,7 @@ thirdButton.addEventListener("click", function (e) {
 });
 
 secondBackCall.addEventListener("click", function () {
-  stepTwo.classList.remove("hidden");
-  stepThree.classList.add("hidden");
+  displayPage(stepThree, stepTwo);
 
   thirdDigit.classList.remove("active_digit");
   if (!stepTwo.classList.contains("hidden"))
@@ -289,8 +290,7 @@ const removeDynamicContainer = function () {
 
 thirdBackCall.addEventListener("click", function () {
   removeDynamicContainer();
-  stepThree.classList.remove("hidden");
-  stepFour.classList.add("hidden");
+  displayPage(stepFour.stepThree);
 
   fourthDigit.classList.remove("active_digit");
   if (!stepThree.classList.contains("hidden"))
@@ -298,8 +298,7 @@ thirdBackCall.addEventListener("click", function () {
 });
 changePlan.addEventListener("click", function (e) {
   removeDynamicContainer();
-  stepTwo.classList.remove("hidden");
-  stepFour.classList.add("hidden");
+  displayPage(stepFour, stepTwo);
 
   fourthDigit.classList.remove("active_digit");
   if (!stepTwo.classList.contains("hidden"))
@@ -308,6 +307,5 @@ changePlan.addEventListener("click", function (e) {
 
 fourthButton.addEventListener("click", function (e) {
   e.preventDefault();
-  finalStep.classList.remove("hidden");
-  stepFour.classList.add("hidden");
+  displayPage(stepFour, finalStep);
 });
