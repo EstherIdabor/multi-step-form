@@ -39,13 +39,15 @@ svg {
 
 /* GENERAL STYLING */
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--Magnolia);
   font-family: "Ubuntu", sans-serif;
   font-size: var(--f-size);
   color: var(--marine-blue);
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 main {
   background-color: var(--White);
